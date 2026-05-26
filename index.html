@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="google-site-verification" content="J67MK3xdnTl-Hbm2aQJ6BMMcXuHYzdmFMnVgbXYRCUc" />
+  <title>Nafel Dynamics — Strategy-Led Growth & Institutional Transformation</title>
+  <meta name="description" content="Nafel Dynamics advances inclusive and sustainable economic growth by designing robust systems, strengthening enterprises, and transforming institutions through strategy-led execution."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Outfit:wght@300;400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ivory:   #f7f3ed;
+      --cream:   #ede8e0;
+      --paper:   #faf8f4;
+      --navy:    #0e1a2b;
+      --navy2:   #162436;
+      --gold:    #b8862a;
+      --gold2:   #d4a44c;
+      --rust:    #9b4f2a;
+      --text:    #1a2535;
+      --muted:   #6b7585;
+      --border:  rgba(14,26,43,0.12);
+      --mono:    'Courier Prime', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--paper);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── TEXTURE OVERLAY ── */
+    body::after {
+      content: '';
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+      opacity: .5;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.3rem 5rem;
+      background: rgba(247,243,237,0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo-mark {
+      display: flex; flex-direction: column; gap: 0;
+    }
+    .logo-name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      letter-spacing: 0.04em;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .logo-sub {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-cta {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: .6rem 1.5rem;
+      background: var(--navy);
+      color: var(--ivory);
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--gold); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 9rem 5rem 5rem;
+      position: relative;
+      background: var(--navy);
+      overflow: hidden;
+    }
+    .hero-pattern {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.03) 60px),
+        repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.03) 60px);
+    }
+    .hero-arc {
+      position: absolute;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      border: 1px solid rgba(184,134,42,0.15);
+      right: -150px; top: 50%; transform: translateY(-50%);
+    }
+    .hero-arc::before {
+      content: '';
+      position: absolute; inset: 60px;
+      border-radius: 50%;
+      border: 1px solid rgba(184,134,42,0.1);
+    }
+    .hero-arc::after {
+      content: '';
+      position: absolute; inset: 120px;
+      border-radius: 50%;
+      border: 1px solid rgba(184,134,42,0.07);
+    }
+    .hero-left { position: relative; z-index: 1; }
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: .8rem;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--gold2);
+      margin-bottom: 2rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block;
+      width: 2.5rem; height: 1px; background: var(--gold2); opacity: .6;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5.5vw, 5.2rem);
+      font-weight: 900;
+      line-height: 1.06;
+      color: var(--ivory);
+      margin-bottom: 2rem;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--gold2);
+    }
+    .hero-p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(247,243,237,0.65);
+      line-height: 1.8;
+      max-width: 440px;
+      margin-bottom: 3rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-gold {
+      padding: 1rem 2.2rem;
+      background: var(--gold);
+      color: var(--ivory);
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      transition: background .2s, transform .15s;
+      display: inline-block;
+    }
+    .btn-gold:hover { background: var(--gold2); transform: translateY(-2px); }
+    .btn-outline-light {
+      padding: 1rem 2.2rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(247,243,237,0.75);
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      transition: border-color .2s, color .2s;
+      display: inline-block;
+    }
+    .btn-outline-light:hover { border-color: var(--gold2); color: var(--gold2); }
+
+    /* hero right panel */
+    .hero-right {
+      position: relative; z-index: 1;
+      display: flex; justify-content: flex-end;
+      padding-left: 3rem;
+    }
+    .vision-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(184,134,42,0.25);
+      padding: 3rem;
+      max-width: 360px;
+      position: relative;
+    }
+    .vision-card::before {
+      content: '"';
+      font-family: 'Playfair Display', serif;
+      font-size: 8rem;
+      color: var(--gold);
+      opacity: .15;
+      position: absolute; top: -1.5rem; left: 1.5rem;
+      line-height: 1;
+    }
+    .vision-card p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--ivory);
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+    .vision-card span {
+      font-family: var(--mono);
+      font-size: .65rem;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      color: var(--gold2);
+    }
+
+    /* ── DIVIDER BAND ── */
+    .band {
+      background: var(--cream);
+      padding: 1.2rem 5rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .band-inner {
+      display: flex; gap: 4rem; white-space: nowrap;
+      animation: scroll-band 35s linear infinite;
+    }
+    .band-item {
+      font-family: var(--mono);
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      color: var(--muted);
+    }
+    .band-item b { color: var(--gold); }
+    @keyframes scroll-band { to { transform: translateX(-50%); } }
+
+    /* ── SHARED SECTION STYLES ── */
+    section { position: relative; z-index: 1; }
+    .wrap { max-width: 1200px; margin: 0 auto; }
+    .s-label {
+      font-family: var(--mono);
+      font-size: .65rem;
+      text-transform: uppercase;
+      letter-spacing: .25em;
+      color: var(--gold);
+      margin-bottom: .8rem;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 1.2rem;
+    }
+    .lead {
+      font-size: 1.02rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 550px;
+    }
+
+    /* ── SERVICES ── */
+    #services { padding: 7rem 5rem; background: var(--paper); }
+    .services-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 5rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .svc {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      padding: 2.8rem 2.5rem;
+      position: relative;
+      transition: background .25s, box-shadow .25s;
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+    }
+    .svc::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .35s ease;
+    }
+    .svc:hover { background: var(--paper); box-shadow: 0 4px 24px rgba(14,26,43,0.07); }
+    .svc:hover::after { transform: scaleX(1); }
+    .svc-num {
+      font-family: var(--mono);
+      font-size: .65rem;
+      color: var(--gold);
+      letter-spacing: .2em;
+      display: block;
+    }
+    .svc h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin: 0;
+    }
+    .svc .plain {
+      font-family: var(--mono);
+      font-size: .66rem;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      color: var(--gold);
+      border-left: 2px solid var(--gold);
+      padding-left: .7rem;
+      display: block;
+    }
+    .svc p { font-size: .9rem; color: var(--muted); line-height: 1.75; margin: 0; }
+    .svc-full { grid-column: span 2; background: var(--navy); border-color: transparent; }
+    .svc-full .svc-num { color: var(--gold2); }
+    .svc-full h3 { color: var(--ivory); }
+    .svc-full .plain { color: var(--gold2); border-left-color: var(--gold2); }
+    .svc-full p { color: rgba(247,243,237,.65); }
+    .svc-full::after { background: linear-gradient(90deg, var(--gold2), var(--gold)); }
+    .svc-full:hover { background: var(--navy2); box-shadow: 0 4px 30px rgba(14,26,43,0.2); }
+
+    /* ── STEADY FRAMEWORK ── */
+    #steady {
+      padding: 7rem 5rem;
+      background: var(--navy);
+    }
+    #steady h2 { color: var(--ivory); }
+    #steady .s-label { color: var(--gold2); }
+    #steady .lead { color: rgba(247,243,237,.55); max-width: 500px; }
+    .steady-header {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center; margin-bottom: 5rem;
+    }
+    .steady-trademark {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      font-weight: 900;
+      color: rgba(184,134,42,0.12);
+      letter-spacing: .2em;
+      text-align: right;
+      line-height: 1;
+      user-select: none;
+    }
+    .steady-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.05);
+    }
+    .steady-card {
+      background: rgba(22,36,54,0.9);
+      padding: 2.5rem;
+      border-left: 3px solid transparent;
+      transition: border-color .25s, background .25s;
+    }
+    .steady-card:hover {
+      border-left-color: var(--gold);
+      background: rgba(30,48,70,0.9);
+    }
+    .steady-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--gold);
+      opacity: .25;
+      line-height: 1;
+      margin-bottom: .5rem;
+    }
+    .steady-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--ivory);
+      margin-bottom: .6rem;
+    }
+    .steady-card p { font-size: .85rem; color: rgba(247,243,237,.5); line-height: 1.65; }
+    .steady-card .outcome {
+      margin-top: 1rem;
+      font-family: var(--mono);
+      font-size: .62rem;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      color: var(--gold2);
+    }
+
+    /* ── WHO WE SERVE ── */
+    #clients { padding: 7rem 5rem; background: var(--cream); }
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+    .client-tier {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+    }
+    .tier-tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: .6rem;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      padding: .3rem .8rem;
+      margin-bottom: 1.4rem;
+    }
+    .tier-tag.primary { background: var(--navy); color: var(--gold2); }
+    .tier-tag.secondary { background: var(--gold); color: var(--ivory); }
+    .tier-tag.premium { background: var(--rust); color: var(--ivory); }
+    .client-tier h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .client-tier ul { list-style: none; }
+    .client-tier li {
+      font-size: .88rem;
+      color: var(--muted);
+      padding: .5rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: .7rem;
+    }
+    .client-tier li:last-child { border-bottom: none; }
+    .client-tier li::before {
+      content: '—';
+      font-family: var(--mono);
+      color: var(--gold);
+      font-size: .75rem;
+      flex-shrink: 0;
+    }
+
+    /* ── STATS ── */
+    #stats {
+      background: var(--navy);
+      padding: 5rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+    .stat-n {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+    }
+    .stat-l {
+      font-family: var(--mono);
+      font-size: .65rem;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      color: rgba(247,243,237,.4);
+      margin-top: .6rem;
+      display: block;
+    }
+
+    /* ── ABOUT / APPROACH ── */
+    #about {
+      padding: 7rem 5rem;
+      background: var(--paper);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .about-visual {
+      position: relative;
+      aspect-ratio: 3/4;
+      background: var(--navy);
+      overflow: hidden;
+    }
+    .about-visual .bg-text {
+      position: absolute;
+      bottom: -1rem; left: -1rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 16rem;
+      font-weight: 900;
+      color: rgba(184,134,42,0.06);
+      line-height: 1;
+      user-select: none;
+    }
+    .about-visual .inner-border {
+      position: absolute; inset: 1.5rem;
+      border: 1px solid rgba(184,134,42,0.15);
+    }
+    .about-visual .gold-bar {
+      position: absolute; top: 0; left: 0;
+      width: 4px; height: 80px;
+      background: var(--gold);
+    }
+    .about-visual .pill {
+      position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--navy);
+      font-family: var(--mono);
+      font-size: .65rem;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      padding: .6rem 1.5rem;
+      white-space: nowrap;
+    }
+    .about-points { margin-top: 2rem; }
+    .ap {
+      display: flex; gap: 1.2rem;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .ap:last-child { border-bottom: none; }
+    .ap-num {
+      font-family: var(--mono);
+      font-size: .65rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: .25rem;
+    }
+    .ap h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: .95rem;
+      color: var(--navy);
+      margin-bottom: .3rem;
+    }
+    .ap p { font-size: .85rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── CONTACT ── */
+    #contact { padding: 7rem 5rem; background: var(--cream); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      margin-top: 4rem;
+    }
+    .contact-left p { font-size: .95rem; color: var(--muted); line-height: 1.8; margin-bottom: 2rem; }
+    .c-detail {
+      display: flex; gap: 1rem; align-items: flex-start;
+      margin-bottom: 1.2rem;
+    }
+    .c-icon {
+      width: 42px; height: 42px; flex-shrink: 0;
+      border: 1px solid var(--border);
+      display: grid; place-items: center;
+      font-size: 1rem; color: var(--gold);
+    }
+    .c-detail-text { font-size: .88rem; }
+    .c-detail-text small {
+      display: block;
+      font-family: var(--mono);
+      font-size: .62rem;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      color: var(--muted);
+      margin-bottom: .2rem;
+    }
+    .c-detail-text a { color: var(--navy); text-decoration: none; }
+    .c-detail-text a:hover { color: var(--gold); }
+
+    .form { display: flex; flex-direction: column; gap: .9rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+    input, textarea, select {
+      width: 100%;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: .9rem;
+      padding: .85rem 1rem;
+      outline: none;
+      resize: none;
+      transition: border-color .2s;
+      appearance: none;
+    }
+    input::placeholder, textarea::placeholder { color: var(--muted); }
+    input:focus, textarea:focus, select:focus { border-color: var(--gold); }
+    .form-btn {
+      padding: 1rem 2rem;
+      background: var(--navy);
+      color: var(--ivory);
+      font-family: var(--mono);
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      border: none;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background .2s;
+    }
+    .form-btn:hover { background: var(--gold); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 3rem 5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-logo .logo-name { color: var(--ivory); font-size: 1.2rem; }
+    footer p {
+      font-family: var(--mono); font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .15em;
+      color: rgba(247,243,237,.3);
+    }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a {
+      font-family: var(--mono); font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .15em;
+      color: rgba(247,243,237,.4);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--gold2); }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+    .reveal.vis { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-links { display: none; }
+      #hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; }
+      .hero-right { display: none; }
+      #services, #clients, #contact { padding: 5rem 1.5rem; }
+      #steady { padding: 5rem 1.5rem; }
+      #about { padding: 5rem 1.5rem; grid-template-columns: 1fr; }
+      .about-visual { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .svc-full { grid-column: span 1; }
+      .clients-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2,1fr); }
+      #stats { padding: 4rem 1.5rem; }
+      .services-header, .steady-header { grid-template-columns: 1fr; gap: 2rem; }
+      .steady-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { padding: 2.5rem 1.5rem; flex-direction: column; text-align: center; }
+      .band { padding: 1.2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="logo-mark">
+    <span class="logo-name">Nafel Dynamics</span>
+    <span class="logo-sub">Consulting</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#steady">Our Method</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Engage Us</a>
+</nav>
+
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-arc"></div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow">Business Development · Strategy · Transformation</div>
+    <h1>
+      Strategy-Led<br/>
+      <em>Growth</em> &amp;<br/>
+      Institutional<br/>
+      Transformation
+    </h1>
+    <p class="hero-p">
+      Nafel Dynamics partners with enterprises, governments, and institutions to design robust systems, strengthen businesses, and build ecosystems where growth is inclusive and sustainable.
+    </p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-gold">Our Services</a>
+      <a href="#contact" class="btn-outline-light">Start a Conversation</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="vision-card">
+      <p>Advancing inclusive and sustainable economic growth — through systems, strategy, and measurable impact.</p>
+      <span>— Our Vision</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── TICKER BAND ── -->
+<div class="band">
+  <div class="band-inner">
+    <span class="band-item">Enterprise Development</span>
+    <span class="band-item">◆</span>
+    <span class="band-item">Capacity Building</span>
+    <span class="band-item">◆</span>
+    <span class="band-item"><b>Nafel Dynamics</b></span>
+    <span class="band-item">◆</span>
+    <span class="band-item">MSME Support</span>
+    <span class="band-item">◆</span>
+    <span class="band-item">Ecosystem Strengthening</span>
+    <span class="band-item">◆</span>
+    <span class="band-item">Value Chain Promotion</span>
+    <span class="band-item">◆</span>
+    <span class="band-item">Financial Literacy</span>
+    <span class="band-item">◆</span>
+    <span class="band-item">Management Consulting</span>
+    <span class="band-item">◆</span>
+    <span class="band-item">HRM / Training Services</span>
+    <span class="band-item">◆</span>
+    <span class="band-item">Enterprise Development</span>
+    <span class="band-item">◆</span>
+    <span class="band-item">Capacity Building</span>
+    <span class="band-item">◆</span>
+    <span class="band-item"><b>Nafel Dynamics</b></span>
+    <span class="band-item">◆</span>
+    <span class="band-item">MSME Support</span>
+    <span class="band-item">◆</span>
+    <span class="band-item">Ecosystem Strengthening</span>
+    <span class="band-item">◆</span>
+    <span class="band-item">Value Chain Promotion</span>
+    <span class="band-item">◆</span>
+    <span class="band-item">Financial Literacy</span>
+    <span class="band-item">◆</span>
+    <span class="band-item">Management Consulting</span>
+    <span class="band-item">◆</span>
+    <span class="band-item">HRM / Training Services</span>
+    <span class="band-item">◆</span>
+  </div>
+</div>
+
+
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="wrap">
+    <div class="services-header reveal">
+      <div>
+        <p class="s-label">What We Do</p>
+        <h2>Eight Core<br/>Service Pillars</h2>
+      </div>
+      <p class="lead">We don't just run trainings. We design transformation programs with clear systems, measurable KPIs, and documented outcomes.</p>
+    </div>
+
+    <div class="services-grid reveal">
+      <div class="svc">
+        <span class="svc-num">01</span>
+        <h3>Enterprise Development</h3>
+        <span class="plain">We help businesses grow properly</span>
+        <p>We work with small and medium businesses that are stuck — fixing poor records, weak pricing, absent systems, and operational chaos. We restructure, formalise, and build the foundations for sustainable growth.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-num">02</span>
+        <h3>Capacity Building</h3>
+        <span class="plain">We train people to perform better</span>
+        <p>Targeted training programs for business owners, staff, cooperatives, and founders. From bookkeeping to governance — we build skills that stick and change behaviour, not just fill attendance sheets.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-num">03</span>
+        <h3>MSME Support</h3>
+        <span class="plain">We give small businesses real tools to survive and scale</span>
+        <p>Access to finance readiness, business diagnostics, compliance support, and market linkages. We prepare small businesses to qualify for bank loans, meet regulatory demands, and connect to buyers.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-num">04</span>
+        <h3>Ecosystem Strengthening</h3>
+        <span class="plain">We improve the environment around businesses, not just the businesses</span>
+        <p>We work with governments, banks, and incubators to design SME policy frameworks, build startup incubation models, and develop cluster strategies. Higher-level, strategic work. Bigger, longer contracts.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-num">05</span>
+        <h3>Financial Literacy</h3>
+        <span class="plain">We teach people how to manage money wisely</span>
+        <p>Financial education programs for youth, women entrepreneurs, farmers, and low-income communities. Digital savings training, personal finance bootcamps, and cashflow management — designed for real comprehension.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-num">06</span>
+        <h3>Value Chain Promotion</h3>
+        <span class="plain">We help industries work better from start to finish</span>
+        <p>We map, analyse, and strengthen entire value chains — coordinating players from farmer to retailer, improving quality, reducing waste, and opening market access. Built on field research and stakeholder engagement.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-num">07</span>
+        <h3>Management Consulting</h3>
+        <span class="plain">We solve serious business problems for companies</span>
+        <p>Our premium service. Strategy development, organisational restructuring, performance improvement, financial restructuring, and risk assessment. This is where our margins are strongest and our impact is deepest.</p>
+      </div>
+      <div class="svc svc-full">
+        <span class="svc-num">08</span>
+        <h3>HRM / Training Services</h3>
+        <span class="plain">Full lifecycle HR — from hire to retire, and everything in between</span>
+        <p>We deliver end-to-end human resource solutions: recruitment, background checks, onboarding and offboarding, payroll management, training, and retraining programs. We also design and set up full HR departments from scratch for growing organisations. For businesses not yet ready for a full-time HR lead, our Fractional HRM and Fractional CFO services provide executive-level people and finance leadership on a flexible, cost-effective basis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── STEADY FRAMEWORK ── -->
+<section id="steady">
+  <div class="wrap">
+    <div class="steady-header reveal">
+      <div>
+        <p class="s-label">Our Signature Methodology</p>
+        <h2>The Nafel Dynamics<br/>S.T.E.A.D.Y Framework™</h2>
+        <p class="lead">Our proprietary framework applied to enterprises, institutions, value chains, and government agencies. Structure, not vibes.</p>
+      </div>
+      <div class="steady-trademark">STEADY</div>
+    </div>
+
+    <div class="steady-grid reveal">
+      <div class="steady-card">
+        <div class="steady-letter">S</div>
+        <h3>Systems Diagnosis</h3>
+        <p>Business audit, governance assessment, financial structure review, and market positioning analysis. We establish what's actually wrong before recommending anything.</p>
+        <div class="outcome">→ Output: Structural gap report</div>
+      </div>
+      <div class="steady-card">
+        <div class="steady-letter">T</div>
+        <h3>Targeted Strategy Design</h3>
+        <p>Growth model selection, financial structuring plan, operational improvement roadmap, and policy alignment for institutions. We design before we execute.</p>
+        <div class="outcome">→ Output: Strategic action blueprint</div>
+      </div>
+      <div class="steady-card">
+        <div class="steady-letter">E</div>
+        <h3>Execution Strengthening</h3>
+        <p>SOP development, capacity building, process optimisation, and financial system installation. We build systems that run without us present.</p>
+        <div class="outcome">→ Output: Functional systems in place</div>
+      </div>
+      <div class="steady-card">
+        <div class="steady-letter">A</div>
+        <h3>Access Enablement</h3>
+        <p>Market linkages, capital readiness, institutional partnerships, and ecosystem integration. We open doors that businesses cannot open alone.</p>
+        <div class="outcome">→ Output: Growth acceleration channels activated</div>
+      </div>
+      <div class="steady-card">
+        <div class="steady-letter">D</div>
+        <h3>Data & Performance Tracking</h3>
+        <p>KPI dashboards, financial tracking, monitoring tools, and impact measurement. We are not done until results are documented and visible.</p>
+        <div class="outcome">→ Output: Measurable performance visibility</div>
+      </div>
+      <div class="steady-card">
+        <div class="steady-letter">Y</div>
+        <h3>Yield & Sustainability</h3>
+        <p>Institutionalisation of processes, governance strengthening, scalability design, and transition planning. Growth must outlast our engagement.</p>
+        <div class="outcome">→ Output: Long-term sustainability</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── STATS ── -->
+<div id="stats">
+  <div class="wrap">
+    <div class="stats-row reveal">
+      <div>
+        <span class="stat-n">8</span>
+        <span class="stat-l">Service Pillars</span>
+      </div>
+      <div>
+        <span class="stat-n">4</span>
+        <span class="stat-l">Revenue Streams</span>
+      </div>
+      <div>
+        <span class="stat-n">6</span>
+        <span class="stat-l">Framework Stages</span>
+      </div>
+      <div>
+        <span class="stat-n">∞</span>
+        <span class="stat-l">Scalable Impact</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── WHO WE SERVE ── -->
+<section id="clients">
+  <div class="wrap">
+    <p class="s-label reveal">Who We Serve</p>
+    <h2 class="reveal">Our Client Base</h2>
+    <p class="lead reveal">SMEs alone cannot fund a serious consulting firm. Our real clients are institutions with budgets tied to measurable impact.</p>
+
+    <div class="clients-grid reveal">
+      <div class="client-tier">
+        <span class="tier-tag primary">Primary Revenue</span>
+        <h3>Institutional Clients</h3>
+        <ul>
+          <li>Government agencies (SME, Trade, Agriculture)</li>
+          <li>Development partners &amp; donor organisations</li>
+          <li>Banks &amp; microfinance institutions</li>
+          <li>Corporate CSR departments</li>
+          <li>Foundations &amp; grant-making bodies</li>
+        </ul>
+      </div>
+      <div class="client-tier">
+        <span class="tier-tag secondary">Secondary</span>
+        <h3>Associative Clients</h3>
+        <ul>
+          <li>SME associations &amp; cooperatives</li>
+          <li>Chambers of commerce</li>
+          <li>Industry clusters</li>
+          <li>Funded startups &amp; accelerators</li>
+          <li>Trade &amp; value chain groups</li>
+        </ul>
+      </div>
+      <div class="client-tier">
+        <span class="tier-tag premium">Premium Private</span>
+        <h3>Direct Advisory Clients</h3>
+        <ul>
+          <li>Medium-sized companies needing restructuring</li>
+          <li>Family businesses in governance transition</li>
+          <li>Growth-stage startups with capital</li>
+          <li>Manufacturing sector enterprises</li>
+          <li>Institutions requiring policy design</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="about-visual reveal">
+    <div class="bg-text">ND</div>
+    <div class="inner-border"></div>
+    <div class="gold-bar"></div>
+    <div class="pill">Strategy · Systems · Impact</div>
+  </div>
+
+  <div>
+    <p class="s-label reveal">About Nafel Dynamics</p>
+    <h2 class="reveal">We Are Not a<br/>Training Company.</h2>
+    <p class="lead reveal">We are a strategy-led growth and institutional transformation firm. Premium consulting at the top. Rigorous development implementation at the ground level.</p>
+
+    <div class="about-points reveal">
+      <div class="ap">
+        <span class="ap-num">01</span>
+        <div>
+          <h4>Methodology, Not Just Services</h4>
+          <p>Every engagement runs through the Nafel Dynamics S.T.E.A.D.Y Framework. Structured phases. Documented deliverables. Measurable outcomes.</p>
+        </div>
+      </div>
+      <div class="ap">
+        <span class="ap-num">02</span>
+        <div>
+          <h4>Proposals That Win</h4>
+          <p>BDSP business is credibility-driven. Our proposal architecture — from executive summary to M&E framework — is built to institutional standard.</p>
+        </div>
+      </div>
+      <div class="ap">
+        <span class="ap-num">03</span>
+        <div>
+          <h4>Sector Specialisation</h4>
+          <p>Nafel Dynamics is deepening its focus in the manufacturing sector — an underserved, high-complexity space where serious consultants are needed and respected.</p>
+        </div>
+      </div>
+      <div class="ap">
+        <span class="ap-num">04</span>
+        <div>
+          <h4>Impact That Outlasts Us</h4>
+          <p>We institutionalise everything we build. Governance. Systems. Processes. The goal is transformation that continues after our engagement ends.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="wrap">
+    <p class="s-label reveal">Get in Touch</p>
+    <h2 class="reveal">Let's Build<br/>Something Serious.</h2>
+
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <p>Whether you need a structured enterprise development program, a value chain study, a management consulting engagement, or long-term institutional advisory — we want to hear what you're trying to solve.</p>
+        <div class="c-detail">
+          <div class="c-icon">✉</div>
+          <div class="c-detail-text">
+            <small>Email</small>
+            <a href="mailto:nafeldynamics@gmail.com">nafeldynamics@gmail.com</a>
+          </div>
+        </div>
+        <div class="c-detail">
+          <div class="c-icon">🌍</div>
+          <div class="c-detail-text">
+            <small>Operations</small>
+            Locally grounded · Nationally active
+          </div>
+        </div>
+        <div class="c-detail">
+          <div class="c-icon">📋</div>
+          <div class="c-detail-text">
+            <small>Engagement Types</small>
+            Project · Retainer · Program · Advisory
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="form">
+          <div class="form-row">
+            <input type="text" placeholder="Full Name"/>
+            <input type="email" placeholder="Email Address"/>
+          </div>
+          <div class="form-row">
+            <input type="text" placeholder="Organisation"/>
+            <input type="text" placeholder="Phone Number"/>
+          </div>
+          <select>
+            <option value="" disabled selected>Service of Interest</option>
+            <option>Enterprise Development</option>
+            <option>Capacity Building</option>
+            <option>MSME Support</option>
+            <option>Ecosystem Strengthening</option>
+            <option>Financial Literacy</option>
+            <option>Value Chain Promotion</option>
+            <option>Management Consulting</option>
+            <option>HRM / Training Services</option>
+            <option>Not Sure — Need Advisory</option>
+          </select>
+          <textarea rows="5" placeholder="Describe your challenge or project briefly…"></textarea>
+          <button class="form-btn" onclick="alert('Thank you. Nafel Dynamics will be in touch shortly.')">Send Enquiry →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo logo-mark">
+    <span class="logo-name">Nafel Dynamics</span>
+    <span class="logo-sub">Consulting</span>
+  </div>
+  <p>© 2026 Nafel Dynamics. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#steady">Method</a>
+    <a href="#clients">Clients</a>
+    <a href="#contact">Contact</a>
+    <a href="https://facebook.com/nafeldynamics" target="_blank">Facebook</a>
+  </div>
+</footer>
+
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('vis'), i * 100);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
